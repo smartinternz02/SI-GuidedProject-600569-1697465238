@@ -1,0 +1,76 @@
+.faq {
+    margin: 10px 25px;
+}
+
+.faq h1 {
+    font-family: "Poppins";
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    padding: 20px 5px;
+    margin: 10px 5px;
+    transition: all 0.8s;
+}
+
+.line {
+    background-color: white;
+    width: 100%;
+    height: 1px;
+}
+
+.question {
+    font-size: 2em;
+    padding: 20px 0px;
+}
+
+.answer {
+    font-size: 1.5em;
+    line-height: 1.5;
+    max-height: 0;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.show-answer {
+    opacity: 1;
+    max-height: 200px;
+    transition: all ease 1s;
+}
+
+.faq-item:hover {
+    transform: scale(1.01);
+}
+
+.question:hover {
+    cursor: pointer;
+}
+
+.faq-item a {
+    position: relative;
+    display: inline-block;
+    padding-top: 5px;
+    transition: all ease 0.5s;
+}
+
+.faq-item a:hover {
+    transform: skewX(-10deg);
+}
+
+.faq-item a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width ease 0.5s;
+}
+
+a:hover::after {
+    width: 100%;
+}

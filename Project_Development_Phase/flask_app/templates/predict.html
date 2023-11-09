@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="{{ url_for('static', filename='css/styles.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', filename='css/predict.css') }}"
+            rel="stylesheet"
+        />
+        <script>
+            function previewImageAndTitle() {
+                const fileInput = document.getElementById("image-upload");
+                const imgTitle = document.querySelector(".img-title");
+                const previewImg = document.getElementById("preview-img");
+
+                if (fileInput.files && fileInput.files[0]) {
+                    const fileName = fileInput.files[0].name;
+                    imgTitle.textContent = fileName;
+                    imgTitle.style.opacity = "1";
+
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        previewImg.src = e.target.result;
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                } else {
+                    imgTitle.textContent = "Choose File";
+                    previewImg.src = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="predict">
+            <h1>Predict Felis Species</h1>
+
+            <form
+                action="{{ url_for('predict') }}"
+                method="POST"
+                enctype="multipart/form-data"
+                class="predict-form"
+            >
+                <div class="input">
+                    <label for="image-upload">
+                        <span>Choose File</span>
+                    </label>
+                    <input
+                        type="file"
+                        name="image"
+                        id="image-upload"
+                        accept="image/*"
+                        onchange="previewImageAndTitle()"
+                        required
+                    />
+
+                    <p class="img-title">Image Title</p>
+
+                    <button type="submit">Submit</button>
+
+                    {% if result %}
+                    <div class="result">
+                        <p>Prediction: {{ result }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="preview">
+                    <img
+                        id="preview-img"
+                        src="{{ url_for('static', filename='images/file.jpg')}}"
+                        alt="Preview Image"
+                    />
+                </div>
+            </form>
+        </div>
+        {% include 'footer.html' %}
+    </body>
+</html>

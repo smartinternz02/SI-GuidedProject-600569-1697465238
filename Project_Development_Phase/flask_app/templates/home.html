@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="{{ url_for('static', filename='css/styles.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', filename='css/home.css') }}"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="home">
+            <div class="wrapper">
+                <h1>
+                    A Modern Approach to Cat Classification: Embracing AI for
+                    Precision and Insight
+                </h1>
+                <a href="{{ url_for('predict') }}">Try</a>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="line"></div>
+            <h1>About FelinAI</h1>
+            <p>
+                At FelinAI, we are passionate about cats and cutting-edge
+                technology. Our journey began with a shared love for feline
+                companions and a vision to merge our enthusiasm with the power
+                of artificial intelligence. Our mission is simple yet profound:
+                to enhance the understanding of cat species through advanced AI
+                classification.
+            </p>
+
+            <p>
+                Our team has meticulously trained our AI system to recognize and
+                classify seven specific cat breeds, including the African
+                Wildcat, Blackfoot Cat, Chinese Mountain Cat, Domestic Cats,
+                European Wildcat, Jungle Cat, and Sand Cat. While we celebrate
+                our current achievements, we're committed to expanding our breed
+                recognition capabilities in the future.
+            </p>
+
+            <p>
+                Join us in this exciting venture where the world of cats
+                converges with the realm of AI. Whether you're a cat enthusiast,
+                a dedicated researcher, or simply curious about your feline
+                friend's breed, FelinAI is here to provide you with accurate and
+                insightful cat classification. Welcome to our world of feline
+                fascination!
+            </p>
+        </div>
+
+        {% include 'footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="{{ url_for('static', filename='css/styles.css') }}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', filename='css/faq.css') }}"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="faq">
+            <h1>Frequently Asked Questions</h1>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h3 class="question">What is FelinAI?</h3>
+                    <div class="answer">
+                        FelinAI is a cutting-edge AI system designed for
+                        classifying cat species based on images. It employs
+                        advanced deep learning techniques to identify and
+                        categorize various feline breeds.
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="faq-item">
+                    <h3 class="question">
+                        How accurate is FelinAI in classifying cat species?
+                    </h3>
+                    <p class="answer">
+                        FelinAI strives for accuracy, achieving a classification
+                        precision of over 95%. It has been trained on extensive
+                        datasets of diverse cat images to ensure reliable
+                        results. While we currently focus on seven specific
+                        breeds, we're committed to enhancing our system to
+                        include more breeds in the future.
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="faq-item">
+                    <h3 class="question">
+                        What types of cat species can FelinAI identify?
+                    </h3>
+                    <p class="answer">
+                        FelinAI excels at recognizing a select group of cat
+                        breeds, including the African Wildcat, Blackfoot Cat,
+                        Chinese Mountain Cat, Domestic Cats, European Wildcat,
+                        Jungle Cat, and Sand Cat. As we continue to develop our
+                        technology, we aim to expand the list of identifiable
+                        breeds.
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="faq-item">
+                    <h3 class="question">
+                        Can FelinAI identify mixed-breed cats?
+                    </h3>
+                    <p class="answer">
+                        Yes, FelinAI has the capability to recognize mixed-breed
+                        cats among the seven specific breeds it currently
+                        supports. However, we're actively working to broaden our
+                        recognition to include more diverse cat breeds and mixed
+                        breeds.
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="faq-item">
+                    <h3 class="question">
+                        How do I use FelinAI to classify a cat's species?
+                    </h3>
+                    <p class="answer">
+                        Using FelinAI is a simple process. Upload an image of
+                        the cat you wish to classify, and our AI system will
+                        analyze the image to determine if it belongs to one of
+                        the seven recognized breeds. You can access this feature
+                        on the
+                        <a class="" href="{{ url_for('predict')}}">Predict</a>
+                        page of our website.
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="faq-item">
+                    <h3 class="question">Is FelinAI accessible to everyone?</h3>
+                    <p class="answer">
+                        Absolutely! FelinAI is designed to be accessible to
+                        anyone interested in identifying cat species. Whether
+                        you're a cat enthusiast, researcher, or simply curious
+                        about your feline friend's breed, FelinAI offers a
+                        user-friendly experience for everyone.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% include 'footer.html' %}
+        <script>
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach((item) => {
+                const question = item.querySelector(".question");
+                const answer = item.querySelector(".answer");
+
+                question.addEventListener("click", () => {
+                    answer.classList.toggle("show-answer");
+                });
+            });
+        </script>
+    </body>
+</html>

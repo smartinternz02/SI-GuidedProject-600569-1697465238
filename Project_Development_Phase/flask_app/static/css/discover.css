@@ -1,0 +1,64 @@
+.discover {
+    margin: 10px 25px;
+}
+
+.discover h1 {
+    font-family: "Poppins";
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+.discover h3 {
+    font-family: "Poppins";
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.bold {
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+.species {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #fff;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    min-height: 50vh;
+    transition: transform 0.8s;
+}
+
+.species-info {
+    flex: 1;
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: justify;
+    padding-right: 25px;
+}
+
+.species-info p {
+    margin: 5px 0px;
+}
+
+.species-img {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.species img {
+    width: 60%;
+    height: auto;
+    border: 5px solid #fff;
+}
+
+.species:hover {
+    transform: scale(1.02);
+}
